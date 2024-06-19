@@ -4,7 +4,7 @@ class Substraction implements Function {
   private final Function minuend;
   private final Function subtrahend;
 
-  Substraction(Function minuend, Function subtrahend){
+  Substraction(Function minuend, Function subtrahend) {
     this.minuend = minuend;
     this.subtrahend = subtrahend;
   }
@@ -14,11 +14,11 @@ class Substraction implements Function {
     return visitor.visit(this);
   }
 
-  public Function getMinuend(){
+  public Function getMinuend() {
     return minuend;
   }
 
-  public Function getSubtrahend(){
+  public Function getSubtrahend() {
     return subtrahend;
   }
 }

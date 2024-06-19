@@ -5,7 +5,7 @@ class Power implements Function {
   private final Function base;
   private final Function exponent;
 
-  public Power(Function base, Function exponent){
+  public Power(Function base, Function exponent) {
     this.base = base;
     this.exponent = exponent;
   }
@@ -15,11 +15,11 @@ class Power implements Function {
     return visitor.visit(this);
   }
 
-  public Function getBase(){
+  public Function getBase() {
     return base;
   }
 
-  public Function getExponent(){
+  public Function getExponent() {
     return exponent;
   }
 }

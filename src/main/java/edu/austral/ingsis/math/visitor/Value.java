@@ -4,7 +4,7 @@ class Value implements Function {
 
   private final double value;
 
-  public Value(double value){
+  public Value(double value) {
     this.value = value;
   }
 
@@ -13,7 +13,7 @@ class Value implements Function {
     return visitor.visit(this);
   }
 
-  public double getValue(){
+  public double getValue() {
     return value;
   }
 }

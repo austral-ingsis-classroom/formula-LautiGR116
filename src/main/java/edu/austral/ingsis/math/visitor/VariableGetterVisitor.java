@@ -3,10 +3,10 @@ package edu.austral.ingsis.math.visitor;
 import java.util.HashSet;
 import java.util.Set;
 
-class VariableGetterVisitor implements Visitor<Set<String>>{
+class VariableGetterVisitor implements Visitor<Set<String>> {
 
-  //Public functions
-  public Set<String> getVariables(Function function){
+  // Public functions
+  public Set<String> getVariables(Function function) {
     return function.accept(this);
   }
 
@@ -60,7 +60,7 @@ class VariableGetterVisitor implements Visitor<Set<String>>{
     return Set.of(variable.getIdentifier());
   }
 
-  //Private functions
+  // Private functions
   private Set<String> joinSets(Function left, Function right) {
     Set<String> leftVariables = left.accept(this);
     Set<String> rightVariables = right.accept(this);

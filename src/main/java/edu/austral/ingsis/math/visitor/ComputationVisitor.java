@@ -5,8 +5,8 @@ import java.util.Map;
 public class ComputationVisitor implements Visitor<Double> {
   private final Map<String, Function> variables;
 
-  //Public functions
-  public ComputationVisitor(Map<String, Function> variables){
+  // Public functions
+  public ComputationVisitor(Map<String, Function> variables) {
     this.variables = variables;
   }
 
@@ -14,11 +14,11 @@ public class ComputationVisitor implements Visitor<Double> {
     this.variables = Map.of();
   }
 
-  public ComputationVisitor setVariables(Map<String, Function> variables){
+  public ComputationVisitor setVariables(Map<String, Function> variables) {
     return new ComputationVisitor(variables);
   }
 
-  public Double compute(Function function){
+  public Double compute(Function function) {
     return function.accept(this);
   }
 
@@ -39,7 +39,8 @@ public class ComputationVisitor implements Visitor<Double> {
 
   @Override
   public Double visit(Multiplication multiplication) {
-    return multiplication.getFirstFactor().accept(this) * multiplication.getSecondFactor().accept(this);
+    return multiplication.getFirstFactor().accept(this)
+        * multiplication.getSecondFactor().accept(this);
   }
 
   @Override

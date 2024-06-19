@@ -11,7 +11,7 @@ class SquareRoot implements Function {
     this.radicand = radicand;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getSquareRoot(variables);
@@ -27,7 +27,7 @@ class SquareRoot implements Function {
     return getSquareRootVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getSquareRoot(Map<String, Function> variables) {
     return Math.sqrt(radicand.compute(variables));
   }

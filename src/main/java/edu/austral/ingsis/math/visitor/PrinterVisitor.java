@@ -1,9 +1,9 @@
 package edu.austral.ingsis.math.visitor;
 
-class PrinterVisitor implements Visitor<String>{
+class PrinterVisitor implements Visitor<String> {
 
-  //Public functions
-  public String print(Function function){
+  // Public functions
+  public String print(Function function) {
     return function.accept(this);
   }
 
@@ -14,17 +14,29 @@ class PrinterVisitor implements Visitor<String>{
 
   @Override
   public String visit(Sum sum) {
-    return "(" + sum.getFirstAddend().accept(this) + " + " + sum.getSecondAddend().accept(this) + ")";
+    return "("
+        + sum.getFirstAddend().accept(this)
+        + " + "
+        + sum.getSecondAddend().accept(this)
+        + ")";
   }
 
   @Override
   public String visit(Division division) {
-    return "(" + division.getDividend().accept(this) + " / " + division.getDivisor().accept(this) + ")";
+    return "("
+        + division.getDividend().accept(this)
+        + " / "
+        + division.getDivisor().accept(this)
+        + ")";
   }
 
   @Override
   public String visit(Multiplication multiplication) {
-    return "(" + multiplication.getFirstFactor().accept(this) + " * " + multiplication.getSecondFactor().accept(this) + ")";
+    return "("
+        + multiplication.getFirstFactor().accept(this)
+        + " * "
+        + multiplication.getSecondFactor().accept(this)
+        + ")";
   }
 
   @Override
@@ -44,7 +56,11 @@ class PrinterVisitor implements Visitor<String>{
 
   @Override
   public String visit(Substraction substraction) {
-    return "(" + substraction.getMinuend().accept(this) + " - " + substraction.getSubtrahend().accept(this) + ")";
+    return "("
+        + substraction.getMinuend().accept(this)
+        + " - "
+        + substraction.getSubtrahend().accept(this)
+        + ")";
   }
 
   @Override
@@ -57,9 +73,9 @@ class PrinterVisitor implements Visitor<String>{
     return variable.getIdentifier();
   }
 
-  //Private functions
-  private String formattedValue(double value){
-    if(value % 1 == 0){
+  // Private functions
+  private String formattedValue(double value) {
+    if (value % 1 == 0) {
       return String.valueOf((int) value);
     }
     return String.valueOf(value);

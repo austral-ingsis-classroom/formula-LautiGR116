@@ -4,7 +4,7 @@ class Sum implements Function {
   private final Function firstAddend;
   private final Function secondAddend;
 
-  Sum(Function firstAddend, Function secondAddend){
+  Sum(Function firstAddend, Function secondAddend) {
     this.firstAddend = firstAddend;
     this.secondAddend = secondAddend;
   }
@@ -14,11 +14,11 @@ class Sum implements Function {
     return visitor.visit(this);
   }
 
-  public Function getFirstAddend(){
+  public Function getFirstAddend() {
     return firstAddend;
   }
 
-  public Function getSecondAddend(){
+  public Function getSecondAddend() {
     return secondAddend;
   }
 }

@@ -7,11 +7,11 @@ class Variable implements Function {
 
   private final String variable;
 
-  public Variable(String variable){
+  public Variable(String variable) {
     this.variable = variable;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getVariable(variables);

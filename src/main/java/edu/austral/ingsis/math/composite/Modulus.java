@@ -7,11 +7,11 @@ class Modulus implements Function {
 
   private final Function value;
 
-  public Modulus(Function value){
+  public Modulus(Function value) {
     this.value = value;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getModulus(variables);
@@ -27,8 +27,7 @@ class Modulus implements Function {
     return getModulusVariables();
   }
 
-
-  //Private functions
+  // Private functions
   private double getModulus(Map<String, Function> variables) {
     return Math.abs(value.compute(variables));
   }

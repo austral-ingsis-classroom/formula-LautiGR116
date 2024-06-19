@@ -2,17 +2,17 @@ package edu.austral.ingsis.math.composite;
 
 import java.util.*;
 
-class Multiplication implements Function{
+class Multiplication implements Function {
 
   private final Function firstFactor;
   private final Function secondFactor;
 
-  Multiplication(Function firstFactor, Function secondFactor){
+  Multiplication(Function firstFactor, Function secondFactor) {
     this.firstFactor = firstFactor;
     this.secondFactor = secondFactor;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getProduct(variables);
@@ -28,7 +28,7 @@ class Multiplication implements Function{
     return getMultiplicationVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getProduct(Map<String, Function> variables) {
     return firstFactor.compute(variables) * secondFactor.compute(variables);
   }
@@ -40,8 +40,10 @@ class Multiplication implements Function{
   private HashSet<String> getMultiplicationVariables() {
     Set<String> firstFactorVariables = firstFactor.getVariables();
     Set<String> secondFactorVariables = secondFactor.getVariables();
-    return new HashSet<>(firstFactorVariables) {{
-      addAll(secondFactorVariables);
-    }};
+    return new HashSet<>(firstFactorVariables) {
+      {
+        addAll(secondFactorVariables);
+      }
+    };
   }
 }

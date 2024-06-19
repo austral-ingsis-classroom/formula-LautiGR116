@@ -3,14 +3,14 @@ package edu.austral.ingsis.math.composite;
 import java.util.Map;
 import java.util.Set;
 
-class Negation implements Function{
+class Negation implements Function {
   private final Function value;
 
-  public Negation(Function value){
+  public Negation(Function value) {
     this.value = value;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getNegation(variables);
@@ -26,7 +26,7 @@ class Negation implements Function{
     return getNegationVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getNegation(Map<String, Function> variables) {
     return -value.compute(variables);
   }

@@ -2,16 +2,16 @@ package edu.austral.ingsis.math.composite;
 
 import java.util.*;
 
-class Sum implements Function{
+class Sum implements Function {
   private final Function firstAddend;
   private final Function secondAddend;
 
-  public Sum(Function firstAddend, Function secondAddend){
+  public Sum(Function firstAddend, Function secondAddend) {
     this.firstAddend = firstAddend;
     this.secondAddend = secondAddend;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getSum(variables);
@@ -27,7 +27,7 @@ class Sum implements Function{
     return getSumVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getSum(Map<String, Function> variables) {
     return firstAddend.compute(variables) + secondAddend.compute(variables);
   }
@@ -39,8 +39,10 @@ class Sum implements Function{
   private HashSet<String> getSumVariables() {
     Set<String> firstAddendVariables = firstAddend.getVariables();
     Set<String> secondAddendVariables = secondAddend.getVariables();
-    return new HashSet<>(firstAddendVariables) {{
-      addAll(secondAddendVariables);
-    }};
+    return new HashSet<>(firstAddendVariables) {
+      {
+        addAll(secondAddendVariables);
+      }
+    };
   }
 }

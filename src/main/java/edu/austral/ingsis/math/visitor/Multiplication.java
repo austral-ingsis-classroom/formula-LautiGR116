@@ -5,7 +5,7 @@ class Multiplication implements Function {
   private final Function firstFactor;
   private final Function secondFactor;
 
-  Multiplication(Function firstFactor, Function secondFactor){
+  Multiplication(Function firstFactor, Function secondFactor) {
     this.firstFactor = firstFactor;
     this.secondFactor = secondFactor;
   }

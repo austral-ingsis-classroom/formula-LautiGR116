@@ -1,6 +1,5 @@
 package edu.austral.ingsis.math.composite;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -8,7 +7,7 @@ class Value implements Function {
 
   private final double value;
 
-  public Value(double value){
+  public Value(double value) {
     this.value = value;
   }
 
@@ -27,10 +26,11 @@ class Value implements Function {
     return getValueVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getValue() {
     return this.value;
   }
+
   private String getFormattedValue() {
     return this.formatValue();
   }
@@ -39,8 +39,8 @@ class Value implements Function {
     return Set.of();
   }
 
-  private String formatValue(){
-    if(value % 1 == 0){
+  private String formatValue() {
+    if (value % 1 == 0) {
       return String.valueOf((int) value);
     }
     return String.valueOf(value);

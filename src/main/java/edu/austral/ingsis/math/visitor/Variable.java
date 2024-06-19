@@ -4,7 +4,7 @@ class Variable implements Function {
 
   private final String identifier;
 
-  public Variable(String identifier){
+  public Variable(String identifier) {
     this.identifier = identifier;
   }
 
@@ -13,7 +13,7 @@ class Variable implements Function {
     return visitor.visit(this);
   }
 
-  public String getIdentifier(){
+  public String getIdentifier() {
     return identifier;
   }
 }

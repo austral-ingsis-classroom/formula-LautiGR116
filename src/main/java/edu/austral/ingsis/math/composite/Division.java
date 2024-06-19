@@ -7,12 +7,12 @@ class Division implements Function {
   private final Function dividend;
   private final Function divisor;
 
-  public Division(Function dividend, Function divisor){
+  public Division(Function dividend, Function divisor) {
     this.dividend = dividend;
     this.divisor = divisor;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getQuotient(variables);
@@ -28,7 +28,7 @@ class Division implements Function {
     return getDivisionVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getQuotient(Map<String, Function> variables) {
     return dividend.compute(variables) / divisor.compute(variables);
   }
@@ -40,8 +40,10 @@ class Division implements Function {
   private HashSet<String> getDivisionVariables() {
     Set<String> dividendVariables = dividend.getVariables();
     Set<String> divisorVariables = divisor.getVariables();
-    return new HashSet<>(dividendVariables) {{
-      addAll(divisorVariables);
-    }};
+    return new HashSet<>(dividendVariables) {
+      {
+        addAll(divisorVariables);
+      }
+    };
   }
 }

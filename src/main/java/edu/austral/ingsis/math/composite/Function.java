@@ -5,6 +5,8 @@ import java.util.Set;
 
 interface Function {
   double compute(Map<String, Function> variables);
+
   String print();
+
   Set<String> getVariables();
 }

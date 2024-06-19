@@ -2,17 +2,17 @@ package edu.austral.ingsis.math.composite;
 
 import java.util.*;
 
-class Power implements Function{
+class Power implements Function {
 
   private final Function base;
   private final Function exponent;
 
-  public Power(Function base, Function exponent){
+  public Power(Function base, Function exponent) {
     this.base = base;
     this.exponent = exponent;
   }
 
-  //Public functions
+  // Public functions
   @Override
   public double compute(Map<String, Function> variables) {
     return getPower(variables);
@@ -28,7 +28,7 @@ class Power implements Function{
     return getPowerVariables();
   }
 
-  //Private functions
+  // Private functions
   private double getPower(Map<String, Function> variables) {
     return Math.pow(base.compute(variables), exponent.compute(variables));
   }
@@ -40,8 +40,10 @@ class Power implements Function{
   private HashSet<String> getPowerVariables() {
     Set<String> baseVariables = base.getVariables();
     Set<String> exponentVariables = exponent.getVariables();
-    return new HashSet<>(baseVariables) {{
-      addAll(exponentVariables);
-    }};
+    return new HashSet<>(baseVariables) {
+      {
+        addAll(exponentVariables);
+      }
+    };
   }
 }

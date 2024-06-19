@@ -4,7 +4,7 @@ class Modulus implements Function {
 
   private final Function value;
 
-  Modulus(Function value){
+  Modulus(Function value) {
     this.value = value;
   }
 
@@ -13,7 +13,7 @@ class Modulus implements Function {
     return visitor.visit(this);
   }
 
-  public Function getValue(){
+  public Function getValue() {
     return value;
   }
 }
