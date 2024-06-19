@@ -24,51 +24,51 @@ public class ComputationVisitor implements Visitor<Double> {
 
   @Override
   public Double visit(Modulus modulus) {
-    return Math.abs(modulus.value().accept(this));
+    return Math.abs(modulus.getValue().accept(this));
   }
 
   @Override
   public Double visit(Sum sum) {
-    return sum.firstAddend().accept(this) + sum.secondAddend().accept(this);
+    return sum.getFirstAddend().accept(this) + sum.getSecondAddend().accept(this);
   }
 
   @Override
   public Double visit(Division division) {
-    return division.dividend().accept(this) / division.divisor().accept(this);
+    return division.getDividend().accept(this) / division.getDivisor().accept(this);
   }
 
   @Override
   public Double visit(Multiplication multiplication) {
-    return multiplication.firstFactor().accept(this) * multiplication.secondFactor().accept(this);
+    return multiplication.getFirstFactor().accept(this) * multiplication.getSecondFactor().accept(this);
   }
 
   @Override
   public Double visit(Negation negation) {
-    return -negation.value().accept(this);
+    return -negation.getValue().accept(this);
   }
 
   @Override
   public Double visit(Power power) {
-    return Math.pow(power.base().accept(this), power.exponent().accept(this));
+    return Math.pow(power.getBase().accept(this), power.getExponent().accept(this));
   }
 
   @Override
   public Double visit(SquareRoot squareRoot) {
-    return Math.sqrt(squareRoot.radicand().accept(this));
+    return Math.sqrt(squareRoot.getRadicand().accept(this));
   }
 
   @Override
   public Double visit(Substraction substraction) {
-    return substraction.minuend().accept(this) - substraction.subtrahend().accept(this);
+    return substraction.getMinuend().accept(this) - substraction.getSubtrahend().accept(this);
   }
 
   @Override
   public Double visit(Value value) {
-    return value.value();
+    return value.getValue();
   }
 
   @Override
   public Double visit(Variable variable) {
-    return variables.get(variable.identifier()).accept(this);
+    return variables.get(variable.getIdentifier()).accept(this);
   }
 }

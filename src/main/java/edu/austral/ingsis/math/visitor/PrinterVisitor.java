@@ -9,52 +9,52 @@ class PrinterVisitor implements Visitor<String>{
 
   @Override
   public String visit(Modulus modulus) {
-    return "|" + modulus.value().accept(this) + "|";
+    return "|" + modulus.getValue().accept(this) + "|";
   }
 
   @Override
   public String visit(Sum sum) {
-    return "(" + sum.firstAddend().accept(this) + " + " + sum.secondAddend().accept(this) + ")";
+    return "(" + sum.getFirstAddend().accept(this) + " + " + sum.getSecondAddend().accept(this) + ")";
   }
 
   @Override
   public String visit(Division division) {
-    return "(" + division.dividend().accept(this) + " / " + division.divisor().accept(this) + ")";
+    return "(" + division.getDividend().accept(this) + " / " + division.getDivisor().accept(this) + ")";
   }
 
   @Override
   public String visit(Multiplication multiplication) {
-    return "(" + multiplication.firstFactor().accept(this) + " * " + multiplication.secondFactor().accept(this) + ")";
+    return "(" + multiplication.getFirstFactor().accept(this) + " * " + multiplication.getSecondFactor().accept(this) + ")";
   }
 
   @Override
   public String visit(Negation negation) {
-    return "-" + negation.value().accept(this);
+    return "-" + negation.getValue().accept(this);
   }
 
   @Override
   public String visit(Power power) {
-    return "(" + power.base().accept(this) + " ^ " + power.exponent().accept(this) + ")";
+    return "(" + power.getBase().accept(this) + " ^ " + power.getExponent().accept(this) + ")";
   }
 
   @Override
   public String visit(SquareRoot squareRoot) {
-    return "sqrt(" + squareRoot.radicand().accept(this) + ")";
+    return "sqrt(" + squareRoot.getRadicand().accept(this) + ")";
   }
 
   @Override
   public String visit(Substraction substraction) {
-    return "(" + substraction.minuend().accept(this) + " - " + substraction.subtrahend().accept(this) + ")";
+    return "(" + substraction.getMinuend().accept(this) + " - " + substraction.getSubtrahend().accept(this) + ")";
   }
 
   @Override
   public String visit(Value value) {
-    return formattedValue(value.value());
+    return formattedValue(value.getValue());
   }
 
   @Override
   public String visit(Variable variable) {
-    return variable.identifier();
+    return variable.getIdentifier();
   }
 
   //Private functions

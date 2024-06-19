@@ -1,9 +1,19 @@
 package edu.austral.ingsis.math.visitor;
 
-record SquareRoot(Function radicand) implements Function {
+class SquareRoot implements Function {
+
+  private final Function radicand;
+
+  SquareRoot(Function radicand) {
+    this.radicand = radicand;
+  }
 
   @Override
   public <T> T accept(Visitor<T> visitor) {
     return visitor.visit(this);
+  }
+
+  public Function getRadicand() {
+    return radicand;
   }
 }

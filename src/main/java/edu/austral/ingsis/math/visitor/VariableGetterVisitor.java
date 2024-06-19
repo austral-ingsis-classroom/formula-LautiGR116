@@ -12,42 +12,42 @@ class VariableGetterVisitor implements Visitor<Set<String>>{
 
   @Override
   public Set<String> visit(Modulus modulus) {
-    return modulus.value().accept(this);
+    return modulus.getValue().accept(this);
   }
 
   @Override
   public Set<String> visit(Sum sum) {
-    return joinSets(sum.firstAddend(), sum.secondAddend());
+    return joinSets(sum.getFirstAddend(), sum.getSecondAddend());
   }
 
   @Override
   public Set<String> visit(Division division) {
-    return joinSets(division.dividend(), division.divisor());
+    return joinSets(division.getDividend(), division.getDivisor());
   }
 
   @Override
   public Set<String> visit(Multiplication multiplication) {
-    return joinSets(multiplication.firstFactor(), multiplication.secondFactor());
+    return joinSets(multiplication.getFirstFactor(), multiplication.getSecondFactor());
   }
 
   @Override
   public Set<String> visit(Negation negation) {
-    return negation.value().accept(this);
+    return negation.getValue().accept(this);
   }
 
   @Override
   public Set<String> visit(Power power) {
-    return joinSets(power.base(), power.exponent());
+    return joinSets(power.getBase(), power.getExponent());
   }
 
   @Override
   public Set<String> visit(SquareRoot squareRoot) {
-    return squareRoot.radicand().accept(this);
+    return squareRoot.getRadicand().accept(this);
   }
 
   @Override
   public Set<String> visit(Substraction substraction) {
-    return joinSets(substraction.minuend(), substraction.subtrahend());
+    return joinSets(substraction.getMinuend(), substraction.getSubtrahend());
   }
 
   @Override
@@ -57,7 +57,7 @@ class VariableGetterVisitor implements Visitor<Set<String>>{
 
   @Override
   public Set<String> visit(Variable variable) {
-    return Set.of(variable.identifier());
+    return Set.of(variable.getIdentifier());
   }
 
   //Private functions
