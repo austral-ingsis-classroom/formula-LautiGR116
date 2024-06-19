@@ -33,7 +33,7 @@ class SquareRoot implements Function {
   }
 
   private String getFormattedSquareRoot() {
-    return "√(" + radicand.print() + ")";
+    return "sqrt(" + radicand.print() + ")";
   }
 
   private Set<String> getSquareRootVariables() {
