@@ -50,7 +50,7 @@ public class PrintTest {
   public void shouldPrintFunction6() {
     final String expected = "(|-8| - 8)";
     final String result =
-        new Substraction(new Modulus(new Negation(new Value(8))), new Value(8)).print();
+        new Subtraction(new Modulus(new Negation(new Value(8))), new Value(8)).print();
 
     assertThat(result, equalTo(expected));
   }
@@ -60,7 +60,7 @@ public class PrintTest {
   public void shouldPrintFunction7() {
     final String expected = "(|value| - 8)";
     final String result =
-        new Substraction(new Modulus(new Variable("value")), new Value(8)).print();
+        new Subtraction(new Modulus(new Variable("value")), new Value(8)).print();
 
     assertThat(result, equalTo(expected));
   }
@@ -70,7 +70,7 @@ public class PrintTest {
   public void shouldPrintFunction8() {
     final String expected = "((5 - i) * 8)";
     final String result =
-        new Multiplication(new Substraction(new Value(5), new Variable("i")), new Value(8)).print();
+        new Multiplication(new Subtraction(new Value(5), new Variable("i")), new Value(8)).print();
 
     assertThat(result, equalTo(expected));
   }

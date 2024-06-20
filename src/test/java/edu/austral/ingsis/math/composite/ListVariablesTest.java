@@ -57,7 +57,7 @@ public class ListVariablesTest {
   @Test
   public void shouldListVariablesFunction6() {
     final Collection<String> result =
-        new Substraction(new Modulus(new Variable("value")), new Value(8)).getVariables();
+        new Subtraction(new Modulus(new Variable("value")), new Value(8)).getVariables();
 
     assertThat(result, containsInAnyOrder("value"));
   }
@@ -74,7 +74,7 @@ public class ListVariablesTest {
   @Test
   public void shouldListVariablesFunction8() {
     final Collection<String> result =
-        new Multiplication(new Substraction(new Value(5), new Variable("i")), new Value(8))
+        new Multiplication(new Subtraction(new Value(5), new Variable("i")), new Value(8))
             .getVariables();
 
     assertThat(result, containsInAnyOrder("i"));

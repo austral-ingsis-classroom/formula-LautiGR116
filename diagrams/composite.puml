@@ -1,0 +1,54 @@
+@startuml
+
+interface Function {
+    + compute(Map<String, Function> variables): double
+    + print(): String
+    + getVariables(): List<String>
+}
+
+class Division implements Function {
+    dividend: Function
+    divisor: Function
+}
+
+class Modulus implements Function {
+    value: Function
+}
+
+class Multiplication implements Function {
+    firstFactor: Function
+    secondFactor: Function
+}
+
+class Negation implements Function {
+    value: Function
+}
+
+class Power implements Function {
+    base: Function
+    exponent: Function
+}
+
+class SquareRoot implements Function{
+    radicand: Function
+}
+
+class Subtraction implements Function {
+    minuend: Function
+    subtrahend: Function
+}
+
+class Sum implements Function {
+    firstAddend: Function
+    secondAddend: Function
+}
+
+class Value implements Function {
+    value: double
+}
+
+class Variable implements Function {
+    identifier: string
+}
+
+@enduml

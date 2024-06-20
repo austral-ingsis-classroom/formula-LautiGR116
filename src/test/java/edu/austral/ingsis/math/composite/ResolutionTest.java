@@ -72,7 +72,7 @@ public class ResolutionTest {
   @Test
   public void shouldResolveSimpleFunction8() {
     final Double result =
-        new Multiplication(new Substraction(new Value(5), new Value(5)), new Value(8))
+        new Multiplication(new Subtraction(new Value(5), new Value(5)), new Value(8))
             .compute(new HashMap<>());
 
     assertThat(result, equalTo(0d));

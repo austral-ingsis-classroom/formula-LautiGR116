@@ -60,7 +60,7 @@ public class ResolutionWithVariablesTest {
   @Test
   public void shouldResolveFunction6() {
     final Double result =
-        new Substraction(new Modulus(new Variable("value")), new Value(8))
+        new Subtraction(new Modulus(new Variable("value")), new Value(8))
             .compute(Map.of("value", new Value(8)));
 
     assertThat(result, equalTo(0d));
@@ -70,7 +70,7 @@ public class ResolutionWithVariablesTest {
   @Test
   public void shouldResolveFunction7() {
     final Double result =
-        new Substraction(new Modulus(new Variable("value")), new Value(8))
+        new Subtraction(new Modulus(new Variable("value")), new Value(8))
             .compute(Map.of("value", new Value(8)));
 
     assertThat(result, equalTo(0d));
@@ -80,7 +80,7 @@ public class ResolutionWithVariablesTest {
   @Test
   public void shouldResolveFunction8() {
     final Double result =
-        new Multiplication(new Substraction(new Value(5), new Variable("i")), new Value(8))
+        new Multiplication(new Subtraction(new Value(5), new Variable("i")), new Value(8))
             .compute(Map.of("i", new Value(2)));
 
     assertThat(result, equalTo(24d));

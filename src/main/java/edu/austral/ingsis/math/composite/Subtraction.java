@@ -2,11 +2,11 @@ package edu.austral.ingsis.math.composite;
 
 import java.util.*;
 
-class Substraction implements Function {
+class Subtraction implements Function {
   private final Function minuend;
   private final Function substrahend;
 
-  public Substraction(Function minuend, Function substrahend) {
+  public Subtraction(Function minuend, Function substrahend) {
     this.minuend = minuend;
     this.substrahend = substrahend;
   }
