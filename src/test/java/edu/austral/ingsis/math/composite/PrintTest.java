@@ -59,8 +59,7 @@ public class PrintTest {
   @Test
   public void shouldPrintFunction7() {
     final String expected = "(|value| - 8)";
-    final String result =
-        new Subtraction(new Modulus(new Variable("value")), new Value(8)).print();
+    final String result = new Subtraction(new Modulus(new Variable("value")), new Value(8)).print();
 
     assertThat(result, equalTo(expected));
   }
